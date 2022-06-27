@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPF_Demo.Views.Layouts.StackPanelLayout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Views.Layouts"
+        mc:Ignorable="d"
+        Title="StackPanel" Height="450" Width="800">
+    <Border Margin="10" Padding="10" Background="LightYellow" BorderBrush="Aqua" BorderThickness="3,5,3,5" CornerRadius="10">
+        <StackPanel>
+            <Label FontSize="44" HorizontalAlignment="Center">Stack Layout</Label>
+            <Button MinWidth="100" MaxWidth="200" Padding="10">One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten</Button>
+            <Button Margin="10" Padding="10" MinWidth="200">Two</Button>
+            <Button Margin="10" Padding="10">Three</Button>
+            <Button Margin="10" Padding="10">Four</Button>
+            <Button Margin="10" Padding="10">Five</Button>
+        </StackPanel>
+    </Border>
+</Window>

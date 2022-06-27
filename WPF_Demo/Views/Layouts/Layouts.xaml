@@ -1,0 +1,59 @@
+﻿<Window x:Class="WPF_Demo.Views.Layouts.Layouts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Views.Layouts"
+        mc:Ignorable="d"
+        Title="Layouts" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="Gray" Grid.ColumnSpan="2">
+            <CheckBox Name="Check_First_Panel" Margin="10, 0" Checked="Check_First_Panel_Checked" Unchecked="Check_First_Panel_Unchecked">
+                First Panel
+            </CheckBox>
+            <CheckBox Name="Check_Second_Panel" Margin="10, 0" Checked="Check_Second_Panel_Checked" Unchecked="Check_Second_Panel_Unchecked">
+                Second Panel
+            </CheckBox>
+            <CheckBox Name="Check_Third_Panel" Margin="10, 0" Checked="Check_Third_Panel_Checked" Unchecked="Check_Third_Panel_Unchecked">
+                Third Panel
+            </CheckBox>
+            <CheckBox Name="Check_Fourth_Panel" Margin="10, 0" Checked="Check_Fourth_Panel_Checked" Unchecked="Check_Fourth_Panel_Unchecked">
+                Fourth Panel
+            </CheckBox>
+        </StackPanel>
+        <UniformGrid Name="uniformGridSection" Columns="3" Rows="3" Grid.Column="0" Grid.Row="1">
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+            <Button Margin="5">Button</Button>
+        </UniformGrid>
+        <TabControl Name="tabControlSection" Grid.Column="1" Grid.Row="1">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Button>First Button</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Button>Second Button</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Frame x:Name="redFrame" Background="Red" Margin="5" Grid.Row="2" Grid.Column="0" />
+        <Frame x:Name="blueFrame" Background="Blue" Margin="5" Grid.Row="2" Grid.Column="1" />
+    </Grid>
+</Window>
