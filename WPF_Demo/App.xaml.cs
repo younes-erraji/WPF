@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace WPF_Demo
@@ -15,7 +10,9 @@ namespace WPF_Demo
     {
         public App()
         {
-            this.Startup += (sender, e) => { MessageBox.Show("The application is starting", "Starting Message"); };
+            this.Startup += (sender, e) => {
+                // MessageBox.Show("The application is starting", "Starting Message");
+            };
 
             this.Exit += (sender, e) => { };
 

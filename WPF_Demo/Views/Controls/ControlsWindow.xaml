@@ -6,28 +6,55 @@
         xmlns:local="clr-namespace:WPF_Demo.Views.Controls"
         mc:Ignorable="d"
         Title="ControlsWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <StackPanel Margin="10">
-        <ComboBox Name="ComboBoxNumbers" Width="120">
-            <ComboBoxItem>First</ComboBoxItem>
-            <ComboBoxItem>Second</ComboBoxItem>
-            <ComboBoxItem>Third</ComboBoxItem>
-            <ComboBoxItem>Fourth</ComboBoxItem>
-            <ComboBoxItem>Fifth</ComboBoxItem>
-        </ComboBox>
-        <Button Margin="20, 5" Padding="5" Click="Button_Click">Submit</Button>
-        <Label HorizontalContentAlignment="Center" Name="LabelNumber" />
-        <!--<Image x:Name="Logo" Height="200" Source="../../Assets/Images/Photoshop.PNG" />-->
-        <Image x:Name="Logo" Height="200" />
-        <UniformGrid Columns="3" Rows="3">
-            <CheckBox x:Name="CheckBoxOne" Margin="5">One</CheckBox>
-            <RadioButton GroupName="firstGroup" Name="radionOne" Margin="5">One</RadioButton>
-            <RadioButton GroupName="secondGroup" Name="radionSOne" Margin="5">One</RadioButton>
-            <CheckBox x:Name="CheckBoxTwo" Margin="5">Two</CheckBox>
-            <RadioButton GroupName="firstGroup" Name="radionTwo" Margin="5">Two</RadioButton>
-            <RadioButton GroupName="secondGroup" Name="radionSTwo" Margin="5">Two</RadioButton>
-            <CheckBox x:Name="CheckBoxThree" Margin="5">Three</CheckBox>
-            <RadioButton GroupName="firstGroup" Name="radionThree" Margin="5">Three</RadioButton>
-            <RadioButton GroupName="secondGroup" Name="radionSThree" Margin="5">Three</RadioButton>
-        </UniformGrid>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Margin="10">
+            <ComboBox Name="ComboBoxNumbers" Width="120">
+                <ComboBoxItem>First</ComboBoxItem>
+                <ComboBoxItem>Second</ComboBoxItem>
+                <ComboBoxItem>Third</ComboBoxItem>
+                <ComboBoxItem>Fourth</ComboBoxItem>
+                <ComboBoxItem>Fifth</ComboBoxItem>
+            </ComboBox>
+            <Button Margin="20, 5" Padding="5" Click="Button_Click">Submit</Button>
+            <Label HorizontalContentAlignment="Center" Name="LabelNumber" />
+            <!--<Image x:Name="Logo" Height="200" Source="../../Assets/Images/Photoshop.PNG" />-->
+            <Image x:Name="Logo" Height="200" />
+            <UniformGrid Columns="3" Rows="3">
+                <CheckBox x:Name="CheckBoxOne" Margin="5">One</CheckBox>
+                <RadioButton GroupName="firstGroup" Name="radionOne" Margin="5">One</RadioButton>
+                <RadioButton GroupName="secondGroup" Name="radionSOne" Margin="5">One</RadioButton>
+                <CheckBox x:Name="CheckBoxTwo" Margin="5">Two</CheckBox>
+                <RadioButton GroupName="firstGroup" Name="radionTwo" Margin="5">Two</RadioButton>
+                <RadioButton GroupName="secondGroup" Name="radionSTwo" Margin="5">Two</RadioButton>
+                <CheckBox x:Name="CheckBoxThree" Margin="5">Three</CheckBox>
+                <RadioButton GroupName="firstGroup" Name="radionThree" Margin="5">Three</RadioButton>
+                <RadioButton GroupName="secondGroup" Name="radionSThree" Margin="5">Three</RadioButton>
+            </UniformGrid>
+            <GroupBox Header="Group" Margin="5" Padding="10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Source="../../Assets/Images/Photoshop.PNG" Height="50"></Image>
+                    <Button Margin="5" Padding="10">One</Button>
+                    <Button Margin="5" Padding="10">Two</Button>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Margin="5" Padding="10">
+                <GroupBox.Header>
+                    <Image HorizontalAlignment="Center" Source="../../Assets/Images/Photoshop.PNG" Height="50"></Image>
+                </GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Button Margin="5" Padding="10">One</Button>
+                    <Button Margin="5" Padding="10">Two</Button>
+                </StackPanel>
+            </GroupBox>
+            <Expander Header="Buttons">
+                <StackPanel>
+                    <Button Padding="10" Margin="5">One</Button>
+                    <Button Padding="10" Margin="5">Two</Button>
+                    <Button Padding="10" Margin="5">Three</Button>
+                    <Button Padding="10" Margin="5">Four</Button>
+                    <Button Padding="10" Margin="5">Five</Button>
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
 </Window>

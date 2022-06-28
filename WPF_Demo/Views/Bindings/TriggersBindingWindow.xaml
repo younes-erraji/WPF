@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPF_Demo.Views.Bindings.TriggersBindingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Views.Bindings"
+        mc:Ignorable="d"
+        Title="TriggersBindingWindow" Height="450" Width="800">
+    <StackPanel>
+        <Label FontSize="44" FontWeight="Bold" HorizontalContentAlignment="Center">Triggers</Label>
+        <Frame Background="Gray" Margin="0, 4" Height="2" />
+        <Label>PropertyChanged Trigger</Label>
+        <TextBox Name="firstTextBox" Margin="10" Text="{Binding ElementName=firstSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Slider x:Name="firstSlider" TickPlacement="TopLeft" Margin="10" />
+        <Frame Background="Gray" Margin="0, 4" Height="2" />
+
+        <Label>Explicit Trigger</Label>
+        <TextBox Name="secondTextBox" Margin="10" Text="{Binding ElementName=secondSlider, Path=Value, UpdateSourceTrigger=Explicit}"></TextBox>
+        <Slider x:Name="secondSlider" TickPlacement="TopLeft" Margin="10" />
+
+        <Button x:Name="TriggerButton" Click="TriggerButton_Click" Padding="10" Content="Trigger" />
+    </StackPanel>
+</Window>

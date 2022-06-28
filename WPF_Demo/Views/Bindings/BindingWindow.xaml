@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPF_Demo.Views.Bindings.BindingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Views.Bindings"
+        mc:Ignorable="d"
+        Title="BindingWindow" Height="450" Width="800">
+    <ScrollViewer>
+        <StackPanel Margin="10">
+            <Label FontSize="44" FontWeight="Bold" HorizontalContentAlignment="Center">Binding</Label>
+            <Label Target="{Binding ElementName=firstName}" FontSize="22">_First Name:</Label>
+            <TextBox Name="firstName" FontSize="22" />
+            <Label Target="{Binding ElementName=lastName}" FontSize="22">_Last Name:</Label>
+            <TextBox Name="lastName" FontSize="22" />
+            <Frame Background="Gray" Margin="0, 4" Height="2" />
+            <TextBox Margin="0, 5" Text="{Binding ElementName=fontSizeSlider, Path=Value}" />
+            <Slider x:Name="fontSizeSlider" Minimum="10" Maximum="100" TickPlacement="TopLeft" />
+            <Label FontSize="{Binding ElementName=fontSizeSlider, Path=Value}">Younes ERRAJI</Label>
+            <Frame Background="Gray" Margin="0, 4" Height="2" />
+            <Label>Binding By Code</Label>
+            <Label Name="displayText"></Label>
+            <TextBox Name="sourceText" Padding="5" Margin="10"></TextBox>
+
+            <Frame Background="Gray" Margin="0, 4" Height="2" />
+            <Label>Two Ways Binding</Label>
+            <TextBox Name="firstInput" Padding="5" Margin="10" Text="{Binding ElementName=secondInput, Path=Text, Mode=TwoWay}"></TextBox>
+            <TextBox Name="secondInput" Padding="5" Margin="10" Text="{Binding ElementName=firstInput, Path=Text, Mode=OneWayToSource}"></TextBox>
+
+            <Frame Background="Gray" Margin="0, 4" Height="2" />
+            <Slider x:Name="secondFontSizeSlider" Minimum="10" Maximum="100" TickPlacement="TopLeft" />
+            <ComboBox Name="fontBox" SelectedIndex="-1" Margin="10, 5">
+                <ComboBoxItem>Arial</ComboBoxItem>
+                <ComboBoxItem>Courier</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="weightBox" SelectedIndex="-1" Margin="10, 5">
+                <ComboBoxItem>Normal</ComboBoxItem>
+                <ComboBoxItem>Bold</ComboBoxItem>
+                <ComboBoxItem>Black</ComboBoxItem>
+            </ComboBox>
+            <Label Margin="5" FontSize="{Binding ElementName=secondFontSizeSlider, Path=Value}" FontWeight="{Binding ElementName=weightBox, Path=Text}" FontFamily="{Binding ElementName=fontBox, Path=Text}">Younes ERRAJI</Label>
+            
+        </StackPanel>
+    </ScrollViewer>
+</Window>

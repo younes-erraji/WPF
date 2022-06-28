@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPF_Demo.Views.DependencyProperties.DependencyPropertiesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Views.DependencyProperties"
+        mc:Ignorable="d"
+        Title="DependecyPropertiesWindow" Height="450" Width="800">
+    <StackPanel>
+        <GroupBox Margin="10" FontFamily="Arial" FontWeight="Black" FontStyle="Italic">
+            <GroupBox.Header>
+                Buttons
+            </GroupBox.Header>
+            <StackPanel>
+                <Button Padding="10" Margin="0, 10" FontWeight="Normal">First Button</Button>
+                <Button Padding="10">Second Button</Button>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel>
+            <TextBox TextChanged="Input_TextChanged" Name="Input">0</TextBox>
+            <Grid HorizontalAlignment="Center" Margin="0, 50">
+                <Polygon x:Name="poly" Stroke="Black" Fill="LightGray" />
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</Window>

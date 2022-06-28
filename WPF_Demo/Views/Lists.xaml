@@ -6,7 +6,42 @@
         xmlns:local="clr-namespace:WPF_Demo.Views"
         mc:Ignorable="d"
         Title="Lists" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <Label FontSize="44" HorizontalAlignment="Center" FontWeight="Black">ListBox</Label>
+            <ListBox Name="ListNames">
+                <ListBoxItem>Younes</ListBoxItem>
+                <ListBoxItem>Safae</ListBoxItem>
+                <ListBoxItem>Ilham</ListBoxItem>
+            </ListBox>
+            <Button Click="Button_Click">Get Selected Item</Button>
+            <ListBox>
+                <TextBlock>Younes</TextBlock>
+                <TextBlock>Safae</TextBlock>
+                <Button>Ilham</Button>
+            </ListBox>
+            <ListBox SelectionChanged="ListBox_SelectionChanged">
+                <ListBoxItem>Younes</ListBoxItem>
+                <ListBoxItem>Safae</ListBoxItem>
+                <ListBoxItem>Ilham</ListBoxItem>
+                <ListBoxItem>Malika</ListBoxItem>
+            </ListBox>
+            <ListBox Name="MultipleNamesList" SelectionMode="Multiple">
+                <ListBoxItem>Younes</ListBoxItem>
+                <ListBoxItem>Safae</ListBoxItem>
+                <ListBoxItem>Ilham</ListBoxItem>
+                <ListBoxItem>Malika</ListBoxItem>
+            </ListBox>
+            <Button Click="MultipleSelectButton_Click">Get Selected Items</Button>
+            <Label FontSize="44" HorizontalAlignment="Center" FontWeight="Black">ComboBox</Label>
+
+            <ComboBox Name="firtComboBox" IsEditable="True" SelectedIndex="-1">
+                <ComboBoxItem>Younes</ComboBoxItem>
+                <ComboBoxItem>Ilham</ComboBoxItem>
+                <ComboBoxItem>Safae</ComboBoxItem>
+                <ComboBoxItem>Malika</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="GetNameFromComboBox" Click="GetNameFromComboBox_Click">Get Selected Item</Button>
+        </StackPanel>
+    </ScrollViewer>
 </Window>
