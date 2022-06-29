@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPF_Demo.Views.Events.Tunneling_Bubbling"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Views.Events"
+        mc:Ignorable="d"
+        Title="Tunneling_Bubbling" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border x:Name="MBorder" Grid.Column="0" Grid.Row="0" BorderThickness="10" BorderBrush="BurlyWood" MouseUp="MBorder_MouseUp" PreviewMouseUp="MBorder_PreviewMouseUp">
+            <Label Name="MLabel" Padding="10" MouseUp="MLabel_MouseUp" PreviewMouseUp="MLabel_PreviewMouseUp">
+                <Button x:Name="MButton" Padding="10" MouseUp="MButton_MouseUp" PreviewMouseUp="MButton_PreviewMouseUp">
+                    Button
+                </Button>
+            </Label>
+        </Border>
+        <StackPanel Margin="10" Grid.Column="1" Grid.Row="0">
+            <Button Name="ClearButton" Padding="10" Click="ClearButton_Click" FontWeight="Bold">Clear</Button>
+            <TextBlock x:Name="events" Margin="10"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
