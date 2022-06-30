@@ -22,6 +22,14 @@ namespace WPF_Demo.Views.Commands
         public CommandsWindow()
         {
             InitializeComponent();
+
+            /*
+            secondButtonCut.Command = ApplicationCommands.Cut;
+            secondButtonCut.CommandTarget = secondCutFrom;
+
+            secondButtonPaste.Command = ApplicationCommands.Paste;
+            secondButtonPaste.CommandTarget = secondPasteTo;
+            */
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -33,6 +41,12 @@ namespace WPF_Demo.Views.Commands
             string pre = txtBox.Text.Substring(0, txtBox.SelectionStart);
             string post = txtBox.Text.Substring(txtBox.SelectionStart + txtBox.SelectionLength);
             txtBox.Text = txtBox.Text = pre + post;
+        }
+
+        private void ButtonPaste_Click(object sender, RoutedEventArgs e)
+        {
+            string cuttedText = Clipboard.GetData(DataFormats.Text).ToString();
+            txtBox.Text += cuttedText;
         }
     }
 }
