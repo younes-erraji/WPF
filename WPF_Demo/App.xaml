@@ -2,8 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WPF_Demo"
-             StartupUri="Views/Controls/Ranges.xaml">
+             StartupUri="Views/Resources/DynamicResources.xaml">
     <Application.Resources>
-        
+        <SolidColorBrush x:Key="background" Color="Aqua" />
     </Application.Resources>
 </Application>

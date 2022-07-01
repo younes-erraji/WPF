@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WPF_Demo.Views.Resources
 {
@@ -22,6 +13,24 @@ namespace WPF_Demo.Views.Resources
         public ResourcesWindow()
         {
             InitializeComponent();
+
+            container.Resources.Add("background", Brushes.Silver);
+            container.Resources.Add("whiteColor", Brushes.White);
+
+            // FirstButton.Background = (Brush)FirstButton.FindResource("background");
+            // FirstButton.Foreground = (Brush)FirstButton.FindResource("whiteColor");
+
+            // FirstButton.Background = (Brush)FirstButton.TryFindResource("background");
+            // FirstButton.Foreground = (Brush)FirstButton.TryFindResource("whiteColor");
+
+            // FirstButton.Background = (Brush)container.Resources["background"];
+            // FirstButton.Foreground = (Brush)container.Resources["whiteColor"];
+        }
+
+        private void FirstButton_Click(object sender, RoutedEventArgs e)
+        {
+            App app = (App)Application.Current;
+            app.Shutdown();
         }
     }
 }

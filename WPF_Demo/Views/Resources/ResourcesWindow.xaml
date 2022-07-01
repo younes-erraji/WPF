@@ -6,7 +6,35 @@
         xmlns:local="clr-namespace:WPF_Demo.Views.Resources"
         mc:Ignorable="d"
         Title="ResourcesWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Window.Resources>
+        <LinearGradientBrush x:Key="gradBrush" StartPoint="0, 0" EndPoint="1, 1">
+            <GradientStop Color="White" Offset="0" />
+            <GradientStop Color="Black" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Resources>
+    <StackPanel x:Name="container">
+        <StackPanel.Resources>
+            <SolidColorBrush x:Key="backgroundFromXaml" Color="Aqua" />
+        </StackPanel.Resources>
+        <Button Name="FirstButton" Margin="10" Padding="10" Click="FirstButton_Click">First Button</Button>
+        <Button Background="{StaticResource backgroundFromXaml}" Margin="10" Padding="10" Click="FirstButton_Click">First Button</Button>
+
+        <Label Content="Linear Gradiant" />
+        <Button Padding="10" Margin="10" Foreground="Wheat" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="Black" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Content>
+                Linear Button
+            </Button.Content>
+        </Button>
+        <Button Padding="10" Margin="10" Foreground="Wheat" FontWeight="Bold" Background="{StaticResource gradBrush}">
+            <Button.Content>
+                Linear Button
+            </Button.Content>
+        </Button>
+    </StackPanel>
 </Window>

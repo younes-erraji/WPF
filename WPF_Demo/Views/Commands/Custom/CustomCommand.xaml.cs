@@ -20,7 +20,7 @@ namespace WPF_Demo.Views.Commands.Custom
             CommandBinding binding = new CommandBinding();
             binding.Command = ReverseCommand.Reverse;
             binding.Executed += ReverseString_Executed;
-            binding.CanExecute += ReverseString_CanExecuted;
+            binding.CanExecute += ReverseString_CanExecute;
 
             CommandBindings.Add(binding);
         }
@@ -32,7 +32,7 @@ namespace WPF_Demo.Views.Commands.Custom
             txtBox.Text = new string(temp);
         }
 
-        private void ReverseString_CanExecuted(object sender, CanExecuteRoutedEventArgs e)
+        private void ReverseString_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = txtBox.Text.Length > 0;
         }
